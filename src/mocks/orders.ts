@@ -12,15 +12,29 @@ export const mockOrders: IOrder[] = [
                 unit: 'un',
                 quantity: 10,
                 unitPrice: 2.50
-            }
+            },
+            {
+                productId: '3b9e5c2d-1a4f-4b8c-9d6e-2f3a4b5c6d7e',
+                productName: 'Cerveja Heineken Long Neck',
+                unit: 'cx',
+                quantity: 2,
+                unitPrice: 89.90
+            },
         ],
         payments: [
             {
                 paymentMethodId: 'c3962388-0ca6-4dfa-b138-9e808f2ad038',
                 paymentMethodName: 'pix',
                 installments: 1,
-                amount: 25
-            }
+                amount: 4.8
+            },
+            {
+                paymentMethodId: '37760a68-71ed-4a40-9b70-9ff88860bc8d',
+                paymentMethodName: 'credit_card',
+                installments: 2,
+                amount: 200
+            },
+
         ],
         createdAt: '2026-05-12T09:23:47'
     },
@@ -35,6 +49,13 @@ export const mockOrders: IOrder[] = [
                 unit: 'cx',
                 quantity: 4,
                 unitPrice:  89.90
+            },
+            {
+                productId: '4c0f6d3e-2b5a-4c9d-8e7f-3a4b5c6d7e8f',
+                productName: 'Cabo Elétrico 2,5mm',
+                unit: 'm',
+                quantity: 50,
+                unitPrice: 4.20
             }
         ],
         payments: [
@@ -42,7 +63,7 @@ export const mockOrders: IOrder[] = [
                 paymentMethodId: '37760a68-71ed-4a40-9b70-9ff88860bc8d',
                 paymentMethodName: 'credit_card',
                 installments: 4,
-                amount: 359.6
+                amount: 569.6
             }
         ],
         createdAt: '2026-04-28T16:47:12'
@@ -81,6 +102,13 @@ export const mockOrders: IOrder[] = [
                 unit: 'un',
                 quantity: 1,
                 unitPrice: 24.90
+            },
+            {
+                productId: '1d2523f7-7808-4ea4-8c22-24d238df7286',
+                productName: 'Caneta BIC Azul',
+                unit: 'un',
+                quantity: 5,
+                unitPrice: 2.50
             }
         ],
         payments: [
@@ -88,7 +116,7 @@ export const mockOrders: IOrder[] = [
                 paymentMethodId: '3b7b54d3-393e-4174-91f6-698135b0d05f',
                 paymentMethodName: 'debit_card',
                 installments: 1,
-                amount: 24.90
+                amount: 37.40
             }
         ],
         createdAt: '2026-03-08T08:30:21'
@@ -134,7 +162,13 @@ export const mockOrders: IOrder[] = [
                 paymentMethodId: 'c1e5ea10-d6c2-4b9b-b954-fd2b438ed793',
                 paymentMethodName: 'money',
                 installments: 1,
-                amount: 899
+                amount: 500
+            },
+            {
+                paymentMethodId: 'c3962388-0ca6-4dfa-b138-9e808f2ad038',
+                paymentMethodName: 'pix',
+                installments: 1,
+                amount: 399
             }
         ],
         createdAt: '2026-02-19T10:12:03'
@@ -150,6 +184,13 @@ export const mockOrders: IOrder[] = [
                 unit: 'l',
                 quantity: 15,
                 unitPrice: 12.90
+            },
+            {
+                productId: '6e2b8f5a-4d7c-4e1f-8a9b-5c6d7e8f9a0b',
+                productName: 'Caderno Universitário 200fls',
+                unit: 'un',
+                quantity: 5,
+                unitPrice: 24.90
             }
         ],
         payments: [
@@ -157,7 +198,7 @@ export const mockOrders: IOrder[] = [
                 paymentMethodId: '37760a68-71ed-4a40-9b70-9ff88860bc8d',
                 paymentMethodName: 'credit_card',
                 installments: 2,
-                amount: 193.5
+                amount: 318.00
             }
         ],
         createdAt: '2026-05-13T15:40:26'
@@ -180,7 +221,13 @@ export const mockOrders: IOrder[] = [
                 paymentMethodId: '445eb2af-b330-42c9-b27e-79cc62fd369d',
                 paymentMethodName: 'boleto',
                 installments: 1,
-                amount: 420
+                amount: 220
+            },
+            {
+                paymentMethodId: 'c3962388-0ca6-4dfa-b138-9e808f2ad038',
+                paymentMethodName: 'pix',
+                installments: 1,
+                amount: 200
             }
         ],
         createdAt: '2026-04-22T13:18:54'
@@ -203,7 +250,13 @@ export const mockOrders: IOrder[] = [
                 paymentMethodId: 'c3962388-0ca6-4dfa-b138-9e808f2ad038',
                 paymentMethodName: 'pix',
                 installments: 1,
-                amount: 500
+                amount: 300
+            },
+            {
+                paymentMethodId: 'c1e5ea10-d6c2-4b9b-b954-fd2b438ed793',
+                paymentMethodName: 'money',
+                installments: 1,
+                amount: 200
             }
         ],
         createdAt: '2026-03-30T11:50:09'
@@ -225,7 +278,7 @@ export const mockOrders: IOrder[] = [
             {
                 paymentMethodId: '37760a68-71ed-4a40-9b70-9ff88860bc8d',
                 paymentMethodName: 'credit_card',
-                installments: 1,
+                installments: 6,
                 amount: 1260
             }
         ],
