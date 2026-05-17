@@ -1,5 +1,5 @@
-import type { EnumPaymentMethodType } from "./IPaymentMethod";
-import type { EnumProductUnit } from "./IProduct";
+import type { EnumPaymentMethodType } from "@/types/IPaymentMethod";
+import type { EnumProductUnit } from "@/types/IProduct";
 
 export type EnumOrderStatus = 'pending' | 'approved' | 'shipped' | 'cancelled';
 

@@ -1,4 +1,4 @@
-import type { IOrder } from "../types/IOrder";
+import type { IOrder } from "@/types/IOrder";
 
 export const mockOrders: IOrder[] = [
     {

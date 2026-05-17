@@ -1,5 +1,5 @@
-import { calcInstallmentValue, calcOrderTotal, calcPaymentTotal, formatCurrency, formatDate, isPaymentComplete } from '../shared/utils/formatters';
-import type { IOrder, IOrderItem, IOrderPayment } from '../types/IOrder';
+import { calcInstallmentValue, calcOrderTotal, calcPaymentTotal, formatCurrency, formatDate, isPaymentComplete } from '@/shared/utils/formatters';
+import type { IOrder, IOrderItem, IOrderPayment } from '@/types/IOrder';
 
 const makeOrder = (items: IOrderItem[], payments: IOrderPayment[]): IOrder => ({
     id: 'test-id',

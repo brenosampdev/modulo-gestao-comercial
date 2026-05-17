@@ -1,5 +1,5 @@
 import { format, isValid, parseISO } from 'date-fns'
-import type { IOrder, IOrderItem, IOrderPayment } from "../../types/IOrder";
+import type { IOrder, IOrderItem, IOrderPayment } from "@/types/IOrder";
 
 function formatDate(date: string): string {
     const normalizeDate = date.trim()

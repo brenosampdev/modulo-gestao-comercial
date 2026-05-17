@@ -1,4 +1,4 @@
-import type { IPaymentMethod } from "../types/IPaymentMethod";
+import type { IPaymentMethod } from "@/types/IPaymentMethod";
 
 export const mockPaymentMethods: IPaymentMethod[] = [
     {
@@ -27,7 +27,7 @@ export const mockPaymentMethods: IPaymentMethod[] = [
         name: 'Boleto Bancário',
         type: 'boleto',
         maxInstallments: 1,
-        active: true
+        active: false
     },
     {
         id: 'c1e5ea10-d6c2-4b9b-b954-fd2b438ed793',
