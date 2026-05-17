@@ -13,12 +13,9 @@ const makeOrder = (items: IOrderItem[], payments: IOrderPayment[]): IOrder => ({
 describe('formatters', () => {
     describe('formatDate', () => {
         it('should return formatted date when input is valid ISO', () => {
-            // Assert
             const input = '2026-05-12T09:23:47'
             const expected = '12/05/2026 às 09:23'
-            // Act
             const result = formatDate(input)
-            // Assert
             expect(result).toBe(expected)
         });
         it('should return sanatization date', () => {
