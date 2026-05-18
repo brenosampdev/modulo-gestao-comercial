@@ -1,11 +1,22 @@
-export type EnumProductUnit = 'un' | 'kg' | 'cx' | 'm' | 'l'
+export const PRODUCT_UNITS = ['un', 'kg', 'cx', 'm', 'l'] as const
+
+export type EnumProductUnit = (typeof PRODUCT_UNITS)[number]
+
+export const UNIT_LABELS: Record<EnumProductUnit, string> = {
+    un: 'Unidade',
+    kg: 'Quilograma',
+    cx: 'Caixa',
+    m: 'Metro',
+    l: 'Litro',
+}
+
 export interface IProduct {
-    id: string;
-    name: string;
-    description: string;
-    price: number; // preço unitário
-    unit: EnumProductUnit; // "un", "kg", "cx", "m", "l"
-    stock: number;
-    active: boolean;
-    createdAt: string; // ISO 8601
+    id: string
+    name: string
+    description: string
+    price: number
+    unit: EnumProductUnit
+    stock: number
+    active: boolean
+    createdAt: string
 }
