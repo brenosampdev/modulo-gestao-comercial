@@ -1,10 +1,12 @@
-import { Button } from 'antd'
+import "@/shared/styles/index.css";
+import AppProvider from "@/app/Provider";
+import AppRoutes from "@/app/routes";
 
 function App() {
   return (
-		<div>
-			<Button type="primary">Olá mundo</Button>
-		</div>
+    <AppProvider>
+      <AppRoutes/>
+    </AppProvider>
   )
 }
 

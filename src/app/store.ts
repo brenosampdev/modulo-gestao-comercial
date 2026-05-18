@@ -1,0 +1,15 @@
+import { configureStore } from '@reduxjs/toolkit'
+import productsReducer from '@/features/products/productsSlice'
+import paymentMethodsReducer from '@/features/payment-methods/paymentMethodSlice'
+import ordersReducer from '@/features/orders/ordersSlice'
+
+export const store = configureStore({
+    reducer: {
+        products: productsReducer,
+        paymentMethods: paymentMethodsReducer,
+        orders: ordersReducer,
+    },
+})
+
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
