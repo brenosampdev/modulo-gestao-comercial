@@ -4,7 +4,7 @@ import type { IProduct } from "@/types/IProduct"
 import { CheckCircleOutlined, EditOutlined, StopOutlined } from "@ant-design/icons"
 import { Button, Popconfirm, Space, Table, Tag } from "antd"
 import type { ColumnsType } from "antd/es/table"
-import { toggleActive } from "../productsSlice"
+import { toggleActive } from "@/features/products/productsSlice"
 
 
 interface TableProductsProps {

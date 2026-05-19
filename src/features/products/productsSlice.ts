@@ -4,7 +4,7 @@ import {
 } from "@reduxjs/toolkit";
 import type { IProduct } from "@/types/IProduct";
 import type { RootState } from "@/app/store";
-import type { ProductFormValues } from "./productsSchema";
+import type { ProductFormValues } from "@/features/products/productsSchema";
 import { v4 as uuid } from "uuid";
 import { mockProducts } from "@/mocks/products";
 

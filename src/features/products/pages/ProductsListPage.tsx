@@ -55,7 +55,7 @@ function ProductsListPage() {
                 <Button
                     type="primary"
                     icon={<PlusOutlined />}
-                    onClick={() => navigate(paths.paymentMethods.new.getHref())}
+                    onClick={() => navigate(paths.products.new.getHref())}
                 >
                     Novo produto
                 </Button>

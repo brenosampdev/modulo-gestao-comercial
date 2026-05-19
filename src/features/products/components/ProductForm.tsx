@@ -13,7 +13,7 @@ interface ProductFormProps {
 
 const unitOptions = PRODUCT_UNITS.map((unit) => ({
     value: unit,
-    label: `${unit} - ${UNIT_LABELS}`,
+    label: `${unit} - ${UNIT_LABELS[unit]}`,
 }))
 
 type ProductFormInput = z.input<typeof productSchema>
@@ -36,6 +36,8 @@ function ProductForm({ defaultValues, onSubmit, onCancel }: ProductFormProps) {
                         help={fieldState.error?.message}
                     >
                         <Input 
+                        maxLength={100}
+                        showCount
                         placeholder='Digite o nome do produto'
                         {...field} />
                     </Form.Item>
