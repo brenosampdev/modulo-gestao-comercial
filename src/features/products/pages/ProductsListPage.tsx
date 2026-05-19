@@ -6,31 +6,22 @@ import {
     Card,
     Flex,
     Modal,
-    Popconfirm,
-    Space,
-    Table,
-    Tag,
     Typography,
 } from 'antd'
-import type { ColumnsType } from 'antd/es/table'
 import {
-    CheckCircleOutlined,
-    EditOutlined,
     PlusOutlined,
-    StopOutlined,
 } from '@ant-design/icons'
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
 import { paths } from '@/config/paths'
-import { formatCurrency } from '@/shared/utils/formatters'
 import {
     selectAllProducts,
     selectProductForEdit,
-    toggleActive,
     updated,
 } from '@/features/products/productsSlice'
 import type { IProduct } from '@/types/IProduct'
 import type { ProductFormValues } from '@/features/products/productsSchema'
 import ProductForm from '@/features/products/components/ProductForm'
+import TableProducts from '@/features/products/components/TableProducts'
 
 function extractFormValues({name, description, unit, price, stock, active}: IProduct): ProductFormValues {
     return { name, description, unit, price, stock, active }
@@ -57,79 +48,6 @@ function ProductsListPage() {
         setEditingId(null)
     }
 
-    const handleToggle = (id: string, active: boolean) => {
-        dispatch(toggleActive({
-            id,
-            active 
-        }))
-    }
-
-    const dataColumns: ColumnsType<IProduct> = [
-        {
-            title: 'Nome',
-            dataIndex: 'name',
-            key: 'name',
-            render: (_, record) => (
-                <>
-                    <div>{record.name}</div>
-                    <Typography.Text type="secondary">{record.description}</Typography.Text>
-                </>
-            ),
-        },
-        {
-            title: 'Unidade',
-            dataIndex: 'unit',
-            key: 'unit',
-        },
-        {
-            title: 'Preço',
-            dataIndex: 'price',
-            key: 'price',
-            render: (price: number) => formatCurrency(price),
-        },
-        {
-            title: 'Estoque',
-            dataIndex: 'stock',
-            key: 'stock',
-            render: (stock: number) =>
-                stock === 0 ? <span style={{ color: 'red' }}>0</span> : stock,
-        },
-        {
-            title: 'Status',
-            dataIndex: 'active',
-            key: 'active',
-            render: (active: boolean) => (
-                <Tag color={active ? 'green' : 'default'}>
-                    {active ? 'Ativo' : 'Inativo'}
-                </Tag>
-            ),
-        },
-        {
-            title: 'Ações',
-            key: 'actions',
-            render: (_, record) => (
-                <Space>
-                    <Button
-                        type="text"
-                        icon={<EditOutlined />}
-                        onClick={() => setEditingId(record.id)}
-                    />
-                    <Popconfirm
-                        title={record.active ? 'Inativar este produto?' : 'Ativar este produto?'}
-                        okText="Sim"
-                        cancelText="Não"
-                        onConfirm={() => handleToggle(record.id, !record.active)}
-                    >
-                        <Button
-                            type="text"
-                            icon={record.active ? <StopOutlined style={{ color: 'red' }} /> : <CheckCircleOutlined />}
-                        />
-                    </Popconfirm>
-                </Space>
-            ),
-        },
-    ]
-
     return (
         <Card>
             <Flex justify="space-between" align="center" style={{ marginBottom: 16 }}>
@@ -137,25 +55,20 @@ function ProductsListPage() {
                 <Button
                     type="primary"
                     icon={<PlusOutlined />}
-                    onClick={() => navigate(paths.products.new.getHref())}
+                    onClick={() => navigate(paths.paymentMethods.new.getHref())}
                 >
                     Novo produto
                 </Button>
             </Flex>
 
-            <Table<IProduct>
-                dataSource={products}
-                rowKey="id"
-                columns={dataColumns}
-                pagination={{ showTotal: (total) => `${total} produtos` }}
-            />
+            <TableProducts products={products} onEdit={setEditingId}/>
 
             <Modal
                 open={editingId !== null}
                 onCancel={() => setEditingId(null)}
                 footer={null}
                 title="Editar produto"
-                destroyOnClose
+                destroyOnHidden
             >
                 {editingProduct && (
                     <ProductForm

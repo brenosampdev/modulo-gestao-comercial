@@ -13,13 +13,13 @@ interface ProductFormProps {
 
 const unitOptions = PRODUCT_UNITS.map((unit) => ({
     value: unit,
-    label: `${unit} - ${UNIT_LABELS[unit]}`,
+    label: `${unit} - ${UNIT_LABELS}`,
 }))
 
 type ProductFormInput = z.input<typeof productSchema>
 
 function ProductForm({ defaultValues, onSubmit, onCancel }: ProductFormProps) {
-    const { control, handleSubmit } = useForm<ProductFormInput, unknown, ProductFormValues>({
+    const { control, handleSubmit } = useForm<ProductFormInput, void, ProductFormValues>({
         resolver: zodResolver(productSchema),
         defaultValues,
     })
@@ -35,7 +35,9 @@ function ProductForm({ defaultValues, onSubmit, onCancel }: ProductFormProps) {
                         validateStatus={fieldState.error ? 'error' : ''}
                         help={fieldState.error?.message}
                     >
-                        <Input {...field} />
+                        <Input 
+                        placeholder='Digite o nome do produto'
+                        {...field} />
                     </Form.Item>
                 )}
             />
