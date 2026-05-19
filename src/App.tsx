@@ -1,4 +1,3 @@
-import "@/shared/styles/index.css";
 import AppProvider from "@/app/Provider";
 import AppRoutes from "@/app/routes";
 
