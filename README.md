@@ -7,6 +7,7 @@ Teste técnico Frontend Júnior ERP com produtos, formas de pagamento e pedidos.
 ```bash
 git clone https://brenosampdev/modulo-gestao-comercial
 
+cd modulo-gestao-comercial
 pnpm install
 pnpm run dev
 ```
